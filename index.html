@@ -222,3 +222,21 @@
 
 </body>
 
+<script>
+    // Función para el efecto de sonido de nivel (opcional si tienes el audio)
+    function playLevelUp() {
+        console.log("¡Pack Generado! Sonido de Level Up.");
+    }
+
+    // Lógica para el botón de descarga
+    const btn = document.querySelector('.btn-descarga');
+    btn.addEventListener('click', () => {
+        const selected = document.querySelectorAll('input[type="checkbox"]:checked');
+        if (selected.length > 0) {
+            alert("✅ ¡Arquitecto Romeo informa: Tu Pack Ultimate con " + selected.length + " funciones está listo para Bedrock!");
+            playLevelUp();
+        } else {
+            alert("❌ ¡Oye! Selecciona al menos una función para tu pack.");
+        }
+    });
+</script>
