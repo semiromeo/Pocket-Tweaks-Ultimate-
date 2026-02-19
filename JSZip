@@ -1,0 +1,12 @@
+async function generarPack() {
+  const zip = new JSZip();
+  
+  // Si el usuario marcó "Bordes Neón"
+  if (opcionNeon.checked) {
+    zip.file("textures/blocks/ore_border.png", imagenNeonData);
+  }
+
+  // Generar el archivo final
+  const content = await zip.generateAsync({type:"blob"});
+  saveAs(content, "PocketTweaks_Ultimate.mcpack"); 
+}
